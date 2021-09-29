@@ -90,9 +90,9 @@ public class TurtleGraphic extends JFrame {
 	}
 	
 	public static void main(String[] arg) {
-		TurtleGraphic demo = new TurtleGraphic("Demo",800,600);
+		TurtleGraphic demo = new TurtleGraphic("Demo",800,650);
 		demo.setPosition(0,0);
-		demo.setDirection(30);
+		demo.setDirection(40);
 		demo.penDown();
 		demo.forward(50);
 		demo.penUp();
