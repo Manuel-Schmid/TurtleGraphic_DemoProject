@@ -48,18 +48,29 @@ public class RecursiveStud {
         TurtleGraphic demo = new TurtleGraphic("dragon", 800, 600);
 //        demo.setPosition(0,-100);
         demo.penDown();
-        dragon(demo, 5, +1);
+        dragon(demo, 5, +1, 500);
         demo.repaint();
     }
 
-    private static void dragon(TurtleGraphic demo, int t, int pre) {
+    private static void dragon(TurtleGraphic demo, int t, int pre, int line) {
         if (t == 0) {
-            demo.forward(50);
+            demo.forward(line);
         } else if (t>0) {
-            dragon(demo, t-1, +1);
+            dragon(demo, t-1, +1, line/2);
             demo.turn(pre * 90);
-            dragon(demo, t-1, -1);
+            dragon(demo, t-1, -1, line/2);
         }
     }
 
+    public static void kochCurve() {
+        TurtleGraphic demo = new TurtleGraphic("K O C H", 800, 600);
+        demo.penDown();
+        koch(demo, 2, 100);
+        demo.repaint();
+    }
+
+    private static void koch(TurtleGraphic demo, int t, int line) {
+        if (t == 0) demo.forward(line);
+        // aufgabe: "Wissenssicherung 8"
+    }
 }
