@@ -86,6 +86,17 @@ public class RecursiveStud {
         }
     }
 
+    public static void circulation() {
+        TurtleGraphic demo = new TurtleGraphic("Snowflake", 800, 650);
+        demo.setPosition(-15, 100);
+        demo.setDirection(0);
+        demo.penDown();
+        for (int i = 0; i < 50; i++) {
+            koch(demo, 4, 30);
+            demo.turn(-40+(i/1.1));
+        }
+    }
+
     public static void kochCurve() {
         TurtleGraphic demo = new TurtleGraphic("Koch", 800, 600);
         demo.setPosition(-250, 0);

@@ -4,7 +4,8 @@ public class Main {
 //        RecursiveStud.ex4();
 //        RecursiveStud.dragonCurve();
 //        RecursiveStud.kochCurve();
-        RecursiveStud.snowflake(3);
+//        RecursiveStud.snowflake(3);
+        RecursiveStud.circulation();
 //        RecursiveStud.drawCheckmark();
     }
 }
