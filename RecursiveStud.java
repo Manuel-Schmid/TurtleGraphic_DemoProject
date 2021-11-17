@@ -62,13 +62,13 @@ public class RecursiveStud {
         }
     }
 
-    public static void snowflake() {
+    public static void snowflake(int edges) {
         TurtleGraphic demo = new TurtleGraphic("Snowflake", 800, 600);
         demo.setPosition(-150, 100);
         demo.penDown();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < edges; i++) {
             koch(demo, 4, 300);
-            demo.turn(-120);
+            demo.turn(-(360.0/edges));
         }
     }
 
