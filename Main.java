@@ -3,7 +3,8 @@ public class Main {
 //        RecursiveStud.ex3();
 //        RecursiveStud.ex4();
 //        RecursiveStud.dragonCurve();
-        RecursiveStud.kochCurve();
+//        RecursiveStud.kochCurve();
+        RecursiveStud.snowflake();
 //        RecursiveStud.drawCheckmark();
     }
 }

@@ -62,8 +62,18 @@ public class RecursiveStud {
         }
     }
 
+    public static void snowflake() {
+        TurtleGraphic demo = new TurtleGraphic("Snowflake", 800, 600);
+        demo.setPosition(-150, 100);
+        demo.penDown();
+        for (int i = 0; i < 3; i++) {
+            koch(demo, 4, 300);
+            demo.turn(-120);
+        }
+    }
+
     public static void kochCurve() {
-        TurtleGraphic demo = new TurtleGraphic("KOCH", 800, 600);
+        TurtleGraphic demo = new TurtleGraphic("Koch", 800, 600);
         demo.setPosition(-250, 0);
         demo.penDown();
         koch(demo, 4, 500);
@@ -81,6 +91,5 @@ public class RecursiveStud {
             demo.turn(60);
             koch(demo, t-1, (line/3));
         }
-        // aufgabe: "Wissenssicherung 8"
     }
 }
