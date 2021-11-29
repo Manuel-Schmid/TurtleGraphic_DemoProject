@@ -53,9 +53,9 @@ public class RecursiveStud {
     }
 
     private static void dragon(TurtleGraphic demo, int t, int pre, int line) {
-        if (t == 0) {
+        if (t == 0) { // Basis
             demo.forward(line);
-        } else if (t>0) {
+        } else if (t>0) { // Vorschrift
             dragon(demo, t-1, +1, line/2);
             demo.turn(pre * 90);
             dragon(demo, t-1, -1, line/2);
@@ -120,29 +120,52 @@ public class RecursiveStud {
 
     public static void kochGenerator() {
         TurtleGraphic demo = new TurtleGraphic("Kapiteltest 4", 800, 600);
-        demo.setPosition(-200,0);
+        demo.setPosition(-350,0);
         demo.penDown();
-        kochgen(demo, 3, 500);
+        kochgen(demo, 4, 720);
         demo.repaint();
     }
 
     private static void kochgen(TurtleGraphic demo, int t, double line) {
         if (t == 0) demo.forward(line);
         else {
-            kochgen(demo, t-1, (line/4));
-            demo.turn(90);
-            kochgen(demo, t-1, (line/4));
-            demo.turn(-90);
-            kochgen(demo, t-1, (line/4));
+            mirroredKoch(demo, t, line);
             demo.turn(-90);
             kochgen(demo, t-1, (line/4));
             kochgen(demo, t-1, (line/4));
             demo.turn(90);
-            kochgen(demo, t-1, (line/4));
-            demo.turn(90);
-            kochgen(demo, t-1, (line/4));
-            demo.turn(-90);
-            kochgen(demo, t-1, (line/4));
+            mirroredKoch(demo, t, line);
         }
+    }
+
+    private static void mirroredKoch(TurtleGraphic demo, int t, double line) {
+        kochgen(demo, t-1, (line/4));
+        demo.turn(90);
+        kochgen(demo, t-1, (line/4));
+        demo.turn(-90);
+        kochgen(demo, t-1, (line/4));
+    }
+
+    public static void pythagorasTree() {
+        TurtleGraphic demo = new TurtleGraphic("Kapiteltest 4", 800, 600);
+//        demo.setPosition(-350,0);
+        demo.penDown();
+        pythagoTree(demo, 4, 100);
+        demo.repaint();
+    }
+
+    private static void pythagoTree(TurtleGraphic demo, int t, double line) {
+        for (int i = 0; i < 4; i++) {
+            demo.forward(line);
+            demo.turn(90);
+        }
+        demo.penUp();
+        demo.turn(90);
+        demo.forward(line);
+        demo.penDown();
+        demo.turn(-45);
+        demo.forward(line);
+        demo.turn(-90);
+        demo.forward(line);
     }
 }

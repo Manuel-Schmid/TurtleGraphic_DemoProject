@@ -5,8 +5,9 @@ public class Main {
 //        RecursiveStud.dragonCurve();
 //        RecursiveStud.kochCurve();
 //        RecursiveStud.snowflake(3);
-//        RecursiveStud.circulation();
-        RecursiveStud.kochGenerator();
+//        RecursiveStud.circulation();/
+//        RecursiveStud.kochGenerator();
+//        RecursiveStud.pythagorasTree();
 //        RecursiveStud.drawCheckmark();
     }
 }
